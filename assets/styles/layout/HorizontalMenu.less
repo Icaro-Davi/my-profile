@@ -1,0 +1,63 @@
+@import '../Colors.less';
+
+.horizontal-menu-container {
+    display: flex;
+    height: 100%;
+    position: relative;
+}
+
+.menu-item {
+    font-size: 1.3em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &.dark-glow:hover {
+        color: @dark-color-title;
+        animation: darkGlow 1s ease-in-out infinite alternate;
+    }
+    &.light-glow:hover {
+        color: @light-color-title;
+        animation: lightGlow 1s ease-in-out infinite alternate;
+    }
+}
+
+.generateKeyframeGlowEffect(@kfName, @color){
+    @light: ~'@{color}33';
+    @keyframes @kfName {
+        from {
+            text-shadow: 0 0 1px @light,
+                0 0 2px @light,
+                0 0 3px @color,
+                0 0 4px @color,
+                0 0 5px @color
+        }
+    
+        to {
+            text-shadow: 0 0 1px @light,
+                0 0 2px @color,
+                0 0 3px @color,
+                0 0 4px @color,
+                0 0 5px @color
+        }
+    }
+}
+
+.generateKeyframeGlowEffect(darkGlow, @dark-color-title);
+.generateKeyframeGlowEffect(lightGlow, #9b9b9b);
+
+.horizontal-menu {
+    position: absolute;
+    bottom: -1.5px;
+    left: 0;
+    height: 3px;
+    width: 0;
+    transition: .3s ease;
+
+    &.dark-line{
+        background-color: @dark-color-title;
+    }
+    &.light-line{
+        background-color: @light-color-title;
+    }
+}

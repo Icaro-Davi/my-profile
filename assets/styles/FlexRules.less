@@ -1,0 +1,29 @@
+@directions: row, column;
+
+.nz-flex-column {
+    display: flex !important;
+    flex-flow: column;
+    &.x-center {
+        align-items: center;
+    }
+    &.y-center {
+        justify-content: center;
+    }
+}
+
+.nz-flex-row {
+    display: flex !important;
+    flex-flow: row;
+    &.x-center {
+        justify-content: center;
+    }
+    &.y-center {
+        align-items: center;
+    }
+}
+
+each(range(24), {
+    .nz-flex-@{value} {
+        flex: 0 0 ((100% * @value)/ 24);
+    }
+});

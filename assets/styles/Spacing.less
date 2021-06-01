@@ -1,0 +1,33 @@
+@none: 0px;
+@sm: 3px;
+@md: 6px;
+@lg: 12px;
+@xl: 24px;
+
+@sizes: none, sm, md, lg, xl;
+@directions: top, bottom, left, right;
+
+.generateDefaultDirections(@direction){
+    each(@sizes, {
+        .nz-@{property}-@{direction}-@{value} { @{property}-@{direction}: @@value; }
+    });
+}
+
+.generateDefaultSize(@property) {
+    each(@sizes, {
+        .nz-@{property}-@{value} {
+            @{property}: @@value; 
+        }      
+    });
+    each(@directions, {
+        .generateDefaultDirections(@value);
+    });
+}
+
+// Class name pattern: class="property-size" or class="property-direction-size"
+
+// Property Padding 
+.generateDefaultSize(padding);
+
+// Property Margin
+.generateDefaultSize(margin);
