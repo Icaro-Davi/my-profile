@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { message } from "antd";
 
 import UserRequestor from '../services/requestor/User';
 import { GitHubUser } from "../services/requestor/User/user.interface";

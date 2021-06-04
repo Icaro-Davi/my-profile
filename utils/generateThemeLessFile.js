@@ -14,11 +14,11 @@ function createClass(key = '', value) {
 
     switch (className) {
         case 'text':            
-            return (`${fullClassName} { & p, span, a, .text { ${property}: ${value} !important; }} \n`);
+            return (`${fullClassName} { & p, span, a, div, .text { ${property}: ${value} !important; }} \n`);
         case 'title':
             return (`${fullClassName} { & h1, h2, h3, h4, .title { ${property}: ${value} !important; }} \n`);
         default:
-            return (`${fullClassName} { ${property}: ${value} !important; }\n`);
+            return (`${fullClassName} { ${property}: ${value}; }\n`);
     }
 }
 
