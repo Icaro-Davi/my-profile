@@ -43,6 +43,16 @@ body{
     display: none;
 }
 
+.nz-spin {
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 // Flex Style
 @import './FlexRules.less';
 
