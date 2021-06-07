@@ -6,7 +6,7 @@ import { AppTheme, LayoutContextProps, LayoutInitialProps, Visibility } from './
 export const LayoutProvider: React.FC<LayoutInitialProps> = props => {
     const [device] = useState({ isMobile: !!props.isMobile });
     const [componentVisibility, setComponentVisibility] = useState<Omit<Visibility, "change">>({
-        menu: { top: true, left: true }
+        menu: props.startMenuVisibility || { top: true, left: true }
     });
     const [theme, setTheme] = useState<Omit<AppTheme, "change">>({ name: props.themeType || 'light' });
 

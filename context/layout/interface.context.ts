@@ -1,6 +1,9 @@
 export interface LayoutInitialProps {
     themeType?: AppThemeTypes;
     isMobile?: boolean;
+    startMenuVisibility?: { 
+        top: boolean, left: boolean
+     }
 }
 
 export interface LayoutContextProps {

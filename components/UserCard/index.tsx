@@ -1,11 +1,10 @@
-import { Col, message, Row, Typography, Grid, Anchor } from 'antd';
+import { Col, message, Row, Typography } from 'antd';
 import { useUser } from '../../hooks/useUser';
 import Loading from '../Loading';
 
-const { Text, Title, Link, Paragraph } = Typography;
+const { Title, Link, Paragraph } = Typography;
 
 const UserCard: React.FC = props => {
-    const breakpoints = Grid.useBreakpoint();
     const { user, isLoading } = useUser('icaro-davi', () => {
         message.error("Falha ao requisitar usuário", 6);
     });

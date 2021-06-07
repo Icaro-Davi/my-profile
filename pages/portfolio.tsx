@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { useLayout } from "../context/layout";
-
 const generateboxs = (numBox = 10) => {
     const elements = [];
     for (let index = 0; index < numBox; index++) {
@@ -20,25 +17,6 @@ const generateboxs = (numBox = 10) => {
 }
 
 const Portfolio = () => {
-    const { visibility } = useLayout();
-
-    useEffect(() => {
-        visibility.change(value => ({
-            ...value,
-            menu: {
-                top: false,
-                left: false,
-            }
-        }));
-        return () => visibility.change(value => ({
-            ...value,
-            menu: {
-                top: true,
-                left: true
-            }
-        }));
-    }, []);
-
     return (
         <>
             {generateboxs(5)}

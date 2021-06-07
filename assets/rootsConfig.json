@@ -1,0 +1,32 @@
+[
+    {
+        "label": "Home",
+        "key": "/",
+        "href": "/",
+        "menuProperties": {
+            "visibility": {
+                "top": true, "left": true
+            }
+        }
+    },
+    {
+        "label": "Contato",
+        "key": "/contact",
+        "href": "/contact",
+        "menuProperties": {
+            "visibility": {
+                "top": true, "left": false
+            }
+        }
+    },
+    {
+        "label": "Portfólio",
+        "key": "/portfolio",
+        "href": "/portfolio",
+        "menuProperties": {
+            "visibility": {
+                "top": false, "left": false
+            }
+        }
+    }
+]
