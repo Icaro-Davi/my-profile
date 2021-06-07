@@ -1,6 +1,9 @@
+import { Locale } from "../../utils/handleLocale";
+
 export interface LayoutInitialProps {
     themeType?: AppThemeTypes;
     isMobile?: boolean;
+    locale?: Locale;
     startMenuVisibility?: { 
         top: boolean, left: boolean
      }
@@ -11,7 +14,8 @@ export interface LayoutContextProps {
     theme: AppTheme;
     device: {
         isMobile: boolean;
-    }
+    },
+    locale: Locale
 }
 
 export type ChangeStateFunc<T> = (value: (oldState: T) => T) => void;

@@ -1,0 +1,6 @@
+{
+    "userCardProfileTitleDefaultTitle": "Profile",
+    "userCardProfileTitleMe": "Hello my name is",
+    "userCardProfileBio": "I have a bachelor's degree in Information Systems at Unijuazeiro. I started developing in 2017 and since then I've been looking to learn new technologies to improve my knowledge and be able to produce code with better quality. I'm looking for a position as a junior software engineer, and with the company to be able to evolve to become even better.",
+    "userCardProfileErrorOnGetUser": "Failed to request user"
+}

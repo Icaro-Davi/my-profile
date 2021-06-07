@@ -1,0 +1,6 @@
+{
+    "userCardProfileTitleDefaultTitle": "Perfil",
+    "userCardProfileTitleMe": "Olá me chamo",
+    "userCardProfileBio": "Sou bacharel em Sistemas de informação na Unijuazeiro. Comecei a desenvolver no ano de 2017 e desde então busquei aprender novas tecnologias para aperfeiçoar meu conhecimento e conseguir produzir código com qualidade cada vez melhor. Estou a procura de um cargo de engenheiro de software junior, e junto da empresa conseguir evoluir para se tornar cada vez melhores.",
+    "userCardProfileErrorOnGetUser": "Falha ao requisitar usuário"
+}
