@@ -5,7 +5,7 @@ import UserCard from '../components/UserCard';
 import CustomDivider from '../components/Divider';
 import { useLayout } from '../context/layout';
 
-const { Paragraph, Text } = Typography;
+const { Paragraph, Text, Title, Link } = Typography;
 
 const App: NextPage = props => {
     const { locale } = useLayout();
@@ -13,7 +13,7 @@ const App: NextPage = props => {
         <Row align='middle' gutter={[0, 8]}>
             <Col xs={24}>
                 <CustomDivider orientation="left" >
-                    <Text className="nz-font-md">{locale.userCardProfileTitleDefaultTitle}</Text>
+                    <Title className="text nz-margin-none" level={3}>{locale.userCardProfileTitleDefaultTitle}</Title>
                 </CustomDivider>
             </Col>
             <Col>
@@ -24,7 +24,7 @@ const App: NextPage = props => {
             </Col>
             <Col xs={24}>
                 <CustomDivider orientation="left">
-                    <Text className="nz-font-md">Experiência</Text>
+                    <Title className="text nz-margin-none" level={3}>Experiência</Title>
                 </CustomDivider>
             </Col>
             <Col>
@@ -32,14 +32,24 @@ const App: NextPage = props => {
             </Col>
             <Col xs={24}>
                 <CustomDivider orientation="left">
-                    <Text className="nz-font-md">Soft Skills</Text>
+                    <Title className="text nz-margin-none" level={3}>Formação acadêmica</Title>
                 </CustomDivider>
             </Col>
             <Col>
-                <li className="nz-font-md">Lorem 1</li>
-                <li className="nz-font-md">Lorem 2</li>
-                <li className="nz-font-md">Lorem 3</li>
-                <li className="nz-font-md">Lorem 4</li>
+                <Title className="text nz-margin-none" level={4} >Sistemas de informação (Dezembro 2020)</Title>
+                <Link href="https://unijuazeiro.edu.br" target="_blank" className="nz-font-md">Unijuazeiro (Dezembro 2020)</Link>
+                <li className="nz-margin-left-md nz-font-md"></li>
+            </Col>
+            <Col xs={24}>
+                <CustomDivider orientation="left">
+                    <Title className="text nz-margin-none" level={3}>Competências e habilidades</Title>
+                </CustomDivider>
+            </Col>
+            <Col>
+                <li className="nz-margin-left-md nz-font-md">Lorem 1</li>
+                <li className="nz-margin-left-md nz-font-md">Lorem 2</li>
+                <li className="nz-margin-left-md nz-font-md">Lorem 3</li>
+                <li className="nz-margin-left-md nz-font-md">Lorem 4</li>
             </Col>
         </Row >
     )

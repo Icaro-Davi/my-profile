@@ -1,4 +1,4 @@
-import { FaFreeCodeCamp, FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
+import { FaFreeCodeCamp, FaLinkedin, FaInstagram, FaGithub, FaMailBulk } from 'react-icons/fa';
 import React, { ReactElement } from 'react';
 import { useLayout } from '../../context/layout';
 
@@ -36,6 +36,11 @@ const SocialMedias = () => {
                 title="FreeCodeCamp"
                 icon={<FaFreeCodeCamp />}
                 href="https://www.freecodecamp.org/icaro-davi"
+            />
+            <SocialMediaButton
+                title="Email"
+                icon={<FaMailBulk />}
+                href="mailto:icarodaviduarte@gmail.com"
             />
         </React.Fragment>
     )

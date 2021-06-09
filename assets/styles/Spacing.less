@@ -16,7 +16,7 @@
 .generateDefaultSize(@property) {
     each(@sizes, {
         .nz-@{property}-@{value} {
-            @{property}: @@value; 
+            @{property}: @@value !important; 
         }      
     });
     each(@directions, {

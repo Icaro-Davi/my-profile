@@ -23,8 +23,8 @@ const UserCard: React.FC = props => {
                 </picture>
             </Loading>
             <Loading hideBackground hideLoadingIcon isLoading={isLoading}>
-                <Title className='nz-padding-left-lg text' level={2} title={locale.userCardProfileTitleDefaultTitle}>
-                    {locale.userCardProfileTitleMe} <b style={{ whiteSpace: 'nowrap' }}>{user?.name.replace(/([\w]*) ([\w]*) .*/g, "$1 $2")}</b>
+                <Title className='nz-padding-left-lg text' level={4} title={locale.userCardProfileTitleDefaultTitle}>
+                    {locale.userCardProfileTitleMe} {user?.name.replace(/([\w]*) ([\w]*) .*/g, "$1 $2")}
                 </Title>
             </Loading>
         </div>
