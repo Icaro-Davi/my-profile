@@ -5,7 +5,7 @@ import UserCard from '../components/UserCard';
 import CustomDivider from '../components/Divider';
 import { useLayout } from '../context/layout';
 
-const { Paragraph, Title, Link } = Typography;
+const { Paragraph, Text, Title, Link } = Typography;
 
 const App: NextPage = props => {
     const { locale } = useLayout();
@@ -23,7 +23,12 @@ const App: NextPage = props => {
                 </CustomDivider>
             </Col>
             <Col>
-                <Paragraph className="nz-font-md nz-font-justify" title={locale.userCardProfileTitleDefaultTitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae molestiae tempora nisi voluptates beatae, repudiandae itaque, vero, praesentium vel nam officiis. Doloremque esse iusto nobis iure odio a similique incidunt?</Paragraph>
+                <Title className="text nz-margin-none" level={4}>
+                    <Link href="https://handhead.com.br" target="_blank">Handhead</Link>
+                </Title>
+                <Text className="nz-font-md">Software Developer</Text>
+                <Paragraph className="nz-margin-none">julho de 2019 - junho de 2021 (2 anos)</Paragraph>
+                <Text>Crato, Ceará, Brasil</Text>
             </Col>
             <Col xs={24}>
                 <CustomDivider orientation="left">
@@ -31,9 +36,12 @@ const App: NextPage = props => {
                 </CustomDivider>
             </Col>
             <Col>
-                <Title className="text nz-margin-none" level={4} >Sistemas de informação (Dezembro 2020)</Title>
-                <Link href="https://unijuazeiro.edu.br" target="_blank" className="nz-font-md">Unijuazeiro (Dezembro 2020)</Link>
-                <li className="nz-margin-left-md nz-font-md"></li>
+                <Title className="text nz-margin-none" level={4}>
+                    <Link href="https://unijuazeiro.edu.br" target="_blank">Unijuazeiro (Dezembro 2020)</Link>
+                </Title>
+                <Text className="nz-font-md">Bacharel em sistemas de informação (Janeiro 2017 - Dezembro 2020)</Text>
+                {/* https://www.sympla.com.br/baixar-certificado/X2g5pS9Ct2-XP8mro9lGF_n2M2KpnEnmKizg7rQOz30 */}
+                <Text className="nz-font-md">Startup weekend Techstars</Text>
             </Col>
             <Col xs={24}>
                 <CustomDivider orientation="left">
