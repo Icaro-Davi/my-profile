@@ -5,17 +5,12 @@ import UserCard from '../components/UserCard';
 import CustomDivider from '../components/Divider';
 import { useLayout } from '../context/layout';
 
-const { Paragraph, Text, Title, Link } = Typography;
+const { Paragraph, Title, Link } = Typography;
 
 const App: NextPage = props => {
     const { locale } = useLayout();
     return (
         <Row align='middle' gutter={[0, 8]}>
-            <Col xs={24}>
-                <CustomDivider orientation="left" >
-                    <Title className="text nz-margin-none" level={3}>{locale.userCardProfileTitleDefaultTitle}</Title>
-                </CustomDivider>
-            </Col>
             <Col>
                 <UserCard />
             </Col>
@@ -42,7 +37,7 @@ const App: NextPage = props => {
             </Col>
             <Col xs={24}>
                 <CustomDivider orientation="left">
-                    <Title className="text nz-margin-none" level={3}>Competências e habilidades</Title>
+                    <Title className="text nz-margin-none" level={3}>Competências</Title>
                 </CustomDivider>
             </Col>
             <Col>

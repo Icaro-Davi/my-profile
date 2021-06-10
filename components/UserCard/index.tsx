@@ -1,6 +1,7 @@
 import { message, Typography } from 'antd';
 import { useLayout } from '../../context/layout';
 import { useUser } from '../../hooks/useUser';
+import CustomDivider from '../Divider';
 import Loading from '../Loading';
 
 const { Title, } = Typography;
@@ -18,14 +19,22 @@ const UserCard: React.FC = props => {
                     <img style={{
                         width: 'inherit',
                         height: "auto",
-                        borderRadius: "50%",                        
+                        borderRadius: "50%",
                     }} alt={user?.name} src={user?.avatar_url} />
                 </picture>
             </Loading>
             <Loading hideBackground hideLoadingIcon isLoading={isLoading}>
-                <Title className='nz-padding-left-lg text' level={4} title={locale.userCardProfileTitleDefaultTitle}>
-                    {locale.userCardProfileTitleMe} {user?.name.replace(/([\w]*) ([\w]*) .*/g, "$1 $2")}
-                </Title>
+                <div className="nz-padding-left-lg">
+                    <Title className='nz-margin-none text' level={3} title={locale.userCardProfileTitleDefaultTitle}>
+                        {user?.name.replace(/([\w]*) ([\w]*) .*/g, "$1 $2") || (<>&nbsp;</>)}
+                    </Title>
+                    <div style={{ minWidth: 50 }}>
+                        <CustomDivider className="nz-margin-none" />
+                    </div>
+                    <Title className='text' level={4} title={locale.userCardProfileTitleDefaultTitle}>
+                        Software Developer
+                    </Title>
+                </div>
             </Loading>
         </div>
     )
