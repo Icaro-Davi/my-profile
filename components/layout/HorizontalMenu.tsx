@@ -1,6 +1,8 @@
 import '../../assets/styles/layout/HorizontalMenu.less';
 import { useRef } from 'react';
 import Link from 'next/link';
+import * as Icon from 'react-icons/fa';
+
 import { useLayout } from '../../context/layout';
 
 interface HorizontalMenuProps {
@@ -12,6 +14,7 @@ export type horizontalMenuItems = {
     label: string;
     key: string;
     href: string;
+    icon?: string;
 }[];
 
 const HorizontalMenu: React.FC<HorizontalMenuProps> = props => {
@@ -25,21 +28,24 @@ const HorizontalMenu: React.FC<HorizontalMenuProps> = props => {
         }
     }
 
-    const MenuItems = (items: horizontalMenuItems, activeKey: string) => {
-        return items.map(item => (
-            <Link href={item.href} key={item.key}>
-                <a
-                    className={`menu-item ${theme.name}-glow nz-margin-right-${device.isMobile ? 'lg' : 'xl'} nz-${theme.name}-color-title title`}
-                    ref={(e) => e && activeKey === item.key && handleMenuLine(e)}
-                    onClick={(e) => handleMenuLine(e.currentTarget)}                    
-                >{item.label}</a>
-            </Link>
-        ));
+    const MenuItems = (items: horizontalMenuItems, activeKey: string, onlyIcons?: boolean) => {
+        return items.map(item => {
+            let CustomIcon = Icon[item.icon];
+            return (
+                <Link href={item.href} key={item.key}>
+                    <a
+                        className={`menu-item ${theme.name}-glow nz-margin-right-${device.isMobile ? 'lg' : 'xl'} nz-${theme.name}-color-title title`}
+                        ref={(e) => e && activeKey === item.key && handleMenuLine(e)}
+                        onClick={(e) => handleMenuLine(e.currentTarget)}
+                    >{item.label || ((onlyIcons && item?.icon) && <CustomIcon />)}</a>
+                </Link>
+            )
+        });
     }
 
     return (
         <div className="horizontal-menu-container nz-padding-left-lg">
-            {MenuItems(props.menuItems, props.initialSelectedItemKey)}
+            {MenuItems(props.menuItems, props.initialSelectedItemKey, true)}
             <div ref={horizontalMenuLineRef} className={`horizontal-menu ${theme.name}-line`} />
         </div>
     )

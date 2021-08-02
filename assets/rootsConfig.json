@@ -1,6 +1,7 @@
 [
     {
         "label": "Home",
+        "icon": "FaHome",
         "key": "/",
         "href": "/",
         "menuProperties": {
@@ -26,6 +27,16 @@
         "menuProperties": {
             "visibility": {
                 "top": false, "left": false
+            }
+        }
+    },
+    {
+        "label": "Teste",
+        "key": "/test",
+        "href": "/test",
+        "menuProperties": {
+            "visibility": {
+                "top": true, "left": true
             }
         }
     }

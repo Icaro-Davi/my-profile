@@ -8,8 +8,13 @@ const { Title, } = Typography;
 
 const UserCard: React.FC = props => {
     const { locale } = useLayout();
-    const { user, isLoading } = useUser('icaro-davi', () => {
-        message.error(locale.userCardProfileErrorOnGetUser, 6);
+    const { user, isLoading } = useUser({
+        username: 'icaro-davi',
+        forceUntilGet: true,
+        intervalMs: 30000,
+        onError: () => {
+            message.error(locale.userCardProfileErrorOnGetUser, 6);
+        }
     });
 
     return (
@@ -32,7 +37,7 @@ const UserCard: React.FC = props => {
                         <CustomDivider className="nz-margin-none" />
                     </div>
                     <Title className='text' level={4} title={locale.userCardProfileTitleDefaultTitle}>
-                        Software Developer
+                        Full-stack Software Developer Jr
                     </Title>
                 </div>
             </Loading>

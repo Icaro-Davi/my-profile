@@ -4,6 +4,7 @@ import { Col, Row, Typography } from 'antd';
 import UserCard from '../components/UserCard';
 import CustomDivider from '../components/Divider';
 import { useLayout } from '../context/layout';
+import StarRating from '../components/StartRating';
 
 const { Paragraph, Text, Title, Link } = Typography;
 
@@ -39,9 +40,7 @@ const App: NextPage = props => {
                 <Title className="text nz-margin-none" level={4}>
                     <Link href="https://unijuazeiro.edu.br" target="_blank">Unijuazeiro (Dezembro 2020)</Link>
                 </Title>
-                <Text className="nz-font-md">Bacharel em sistemas de informação (Janeiro 2017 - Dezembro 2020)</Text>
-                {/* https://www.sympla.com.br/baixar-certificado/X2g5pS9Ct2-XP8mro9lGF_n2M2KpnEnmKizg7rQOz30 */}
-                <Text className="nz-font-md">Startup weekend Techstars</Text>
+                <Paragraph className="nz-font-md nz-margin-none">Bacharel em sistemas de informação (Janeiro 2017 - Dezembro 2020)</Paragraph>
             </Col>
             <Col xs={24}>
                 <CustomDivider orientation="left">
@@ -49,10 +48,14 @@ const App: NextPage = props => {
                 </CustomDivider>
             </Col>
             <Col>
-                <li className="nz-margin-left-md nz-font-md">Lorem 1</li>
-                <li className="nz-margin-left-md nz-font-md">Lorem 2</li>
-                <li className="nz-margin-left-md nz-font-md">Lorem 3</li>
-                <li className="nz-margin-left-md nz-font-md">Lorem 4</li>
+                <li className="nz-margin-left-md nz-font-md">Javascript <StarRating rate={5} /></li>
+                <li className="nz-margin-left-md nz-font-md">ReactJs <StarRating rate={4} /></li>
+                <li className="nz-margin-left-md nz-font-md">NodeJs <StarRating rate={3} /></li>
+                <li className="nz-margin-left-md nz-font-md">NextJs <StarRating rate={3} /></li>
+                <li className="nz-margin-left-md nz-font-md">Express <StarRating rate={3} /></li>
+                <li className="nz-margin-left-md nz-font-md">HTML <StarRating rate={3} /></li>
+                <li className="nz-margin-left-md nz-font-md">CSS <StarRating rate={3} /></li>
+                <li className="nz-margin-left-md nz-font-md">Java <StarRating rate={2} /></li>
             </Col>
         </Row >
     )
