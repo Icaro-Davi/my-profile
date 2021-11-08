@@ -15,6 +15,14 @@
         "key": "/contact",
         "href": "/contact",
         "menuProperties": {
+            "hideMenuOn": {
+                "xs": false,
+                "sm": true,
+                "md": true,
+                "lg": true,
+                "xl": true,
+                "xxl": true
+            },
             "visibility": {
                 "top": true, "left": false
             }
@@ -24,16 +32,6 @@
         "label": "Portfólio",
         "key": "/portfolio",
         "href": "/portfolio",
-        "menuProperties": {
-            "visibility": {
-                "top": false, "left": false
-            }
-        }
-    },
-    {
-        "label": "Teste",
-        "key": "/test",
-        "href": "/test",
         "menuProperties": {
             "visibility": {
                 "top": true, "left": true
