@@ -1,9 +1,9 @@
-import { FaFreeCodeCamp, FaLinkedin, FaInstagram, FaGithub, FaMailBulk } from 'react-icons/fa';
+import * as FontAwesome from 'react-icons/fa';
 import React, { ReactElement } from 'react';
 import { useLayout } from '../../context/layout';
 
 const SocialMedias = () => {
-    const { theme } = useLayout();
+    const { theme, locale } = useLayout();
     const SocialMediaButton = (props: { icon: ReactElement, href: string, title: string }) => (
         <a
             className={`nz-padding-md nz-margin-top-md nz-flex-row x-center y-center nz-${theme.name}-background-3 title`}
@@ -17,37 +17,23 @@ const SocialMedias = () => {
     );
     return (
         <React.Fragment>
-            <SocialMediaButton
-                title="GitHub"
-                icon={<FaGithub />}
-                href="https://github.com/icaro-davi"
-            />
-            <SocialMediaButton
-                title="LinkedIn"
-                icon={<FaLinkedin />}
-                href="https://www.linkedin.com/in/icaro-davi/"
-            />
-            <SocialMediaButton
-                title="Instagram"
-                icon={<FaInstagram />}
-                href="https://www.instagram.com/icaro_davi_/"
-            />
-            <SocialMediaButton
-                title="FreeCodeCamp"
-                icon={<FaFreeCodeCamp />}
-                href="https://www.freecodecamp.org/icaro-davi"
-            />
-            <SocialMediaButton
-                title="Email"
-                icon={<FaMailBulk />}
-                href="mailto:icarodaviduarte@gmail.com"
-            />
+            {locale.menu.sideMenu.contact.list.map((contact, i) => {
+                const FontAwesomeIcon = FontAwesome[contact.fontAwesomeIcon];
+                return (
+                    <SocialMediaButton
+                        key={`contact-${i}`}
+                        title={contact.title}
+                        icon={<FontAwesomeIcon />}
+                        href={contact.url}
+                    />
+                )
+            })}           
         </React.Fragment>
     )
 }
 
 const SideMenu: React.FC = () => {
-    
+
     return (
         <React.Fragment>
             <SocialMedias />
