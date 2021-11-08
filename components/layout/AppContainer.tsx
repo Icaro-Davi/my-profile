@@ -13,8 +13,7 @@ import rootsConfig from '../../assets/rootsConfig.json';
 const AppContainer: React.FC = props => {
     const breakpoints = Grid.useBreakpoint();
     const router = useRouter();
-    const { visibility, theme, device } = useLayout();
-    const isScreenXsOrDeviceMobile = breakpoints.xs || device.isMobile;
+    const { visibility, theme } = useLayout();
 
     const handleLogoClick = () => {
         theme.name === 'dark'
@@ -27,7 +26,7 @@ const AppContainer: React.FC = props => {
             ...oldState,
             menu: rootsConfig.find(
                 config => config.href === router.pathname
-            ).menuProperties.visibility
+            )?.menuProperties.visibility || { left: false, top: true }
         }));
     }, [router.pathname]);
 
@@ -40,12 +39,12 @@ const AppContainer: React.FC = props => {
                 </Header>
             )}
             <div className={`nz-flex-row nz-z-index-5 nz-container`}>
-                {(visibility.menu.left && !isScreenXsOrDeviceMobile) && (
+                {(visibility.menu.left && !breakpoints.xs) && (
                     <div className={`nz-left-menu nz-${theme.name}-background-2 nz-flex-column x-center nz-app-transition`}>
                         <SideMenu />
                     </div>
                 )}
-                <Content className={`nz-main-container nz-${theme.name}-background-3 ${isScreenXsOrDeviceMobile ? 'nz-padding-lg' : 'nz-padding-xl'} nz-app-transition`}>
+                <Content className={`nz-main-container nz-${theme.name}-background-3 ${breakpoints.xs ? 'nz-padding-lg' : 'nz-padding-xl'} nz-app-transition`}>
                     {props.children}
                 </Content>
             </div>
