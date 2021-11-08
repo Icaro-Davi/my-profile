@@ -2,6 +2,7 @@ import '../../assets/styles/layout/HorizontalMenu.less';
 import { useRef } from 'react';
 import Link from 'next/link';
 import * as Icon from 'react-icons/fa';
+import { Grid } from 'antd';
 
 import { useLayout } from '../../context/layout';
 
@@ -15,12 +16,22 @@ export type horizontalMenuItems = {
     key: string;
     href: string;
     icon?: string;
+    menuProperties: {
+        hideMenuOn?: {
+            xs?: boolean;
+            sm?: boolean;
+            md?: boolean;
+            lg?: boolean;
+            xl?: boolean;
+            xxl?: boolean;
+        }
+    }
 }[];
 
 const HorizontalMenu: React.FC<HorizontalMenuProps> = props => {
     const { theme, device } = useLayout();
+    const breakpoints = Grid.useBreakpoint();
     const horizontalMenuLineRef = useRef<HTMLDivElement>(null);
-
     function handleMenuLine(e: HTMLAnchorElement) {
         if (horizontalMenuLineRef.current) {
             horizontalMenuLineRef.current.style.left = `${e.offsetLeft}px`;
@@ -31,6 +42,10 @@ const HorizontalMenu: React.FC<HorizontalMenuProps> = props => {
     const MenuItems = (items: horizontalMenuItems, activeKey: string, onlyIcons?: boolean) => {
         return items.map(item => {
             let CustomIcon = Icon[item.icon];
+            if (item.menuProperties.hideMenuOn) {
+                let hide = Object.keys(item.menuProperties.hideMenuOn).some(breakpoint => item.menuProperties.hideMenuOn[breakpoint] && breakpoints[breakpoint]);
+                if (hide) return;
+            }
             return (
                 <Link href={item.href} key={item.key}>
                     <a
