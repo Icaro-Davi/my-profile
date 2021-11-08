@@ -1,64 +1,87 @@
+import { Fragment } from 'react';
 import { NextPage } from 'next';
-import { Col, Row, Typography } from 'antd';
+import Head from 'next/head';
+import { Col, Row, Typography, Timeline } from 'antd';
 
 import UserCard from '../components/UserCard';
 import CustomDivider from '../components/Divider';
 import { useLayout } from '../context/layout';
-import StarRating from '../components/StartRating';
+import Tag from '../components/Tag';
 
 const { Paragraph, Text, Title, Link } = Typography;
 
-const App: NextPage = props => {
+const Home: NextPage = props => {
     const { locale } = useLayout();
     return (
-        <Row align='middle' gutter={[0, 8]}>
-            <Col>
-                <UserCard />
-            </Col>
-            <Col>
-                <Paragraph className="nz-font-md nz-font-justify" title={locale.userCardProfileTitleDefaultTitle}>{locale?.userCardProfileBio}</Paragraph>
-            </Col>
-            <Col xs={24}>
-                <CustomDivider orientation="left">
-                    <Title className="text nz-margin-none" level={3}>Experiência</Title>
-                </CustomDivider>
-            </Col>
-            <Col>
-                <Title className="text nz-margin-none" level={4}>
-                    <Link href="https://handhead.com.br" target="_blank">Handhead</Link>
-                </Title>
-                <Text className="nz-font-md">Software Developer</Text>
-                <Paragraph className="nz-margin-none">julho de 2019 - junho de 2021 (2 anos)</Paragraph>
-                <Text>Crato, Ceará, Brasil</Text>
-            </Col>
-            <Col xs={24}>
-                <CustomDivider orientation="left">
-                    <Title className="text nz-margin-none" level={3}>Formação acadêmica</Title>
-                </CustomDivider>
-            </Col>
-            <Col>
-                <Title className="text nz-margin-none" level={4}>
-                    <Link href="https://unijuazeiro.edu.br" target="_blank">Unijuazeiro (Dezembro 2020)</Link>
-                </Title>
-                <Paragraph className="nz-font-md nz-margin-none">Bacharel em sistemas de informação (Janeiro 2017 - Dezembro 2020)</Paragraph>
-            </Col>
-            <Col xs={24}>
-                <CustomDivider orientation="left">
-                    <Title className="text nz-margin-none" level={3}>Competências</Title>
-                </CustomDivider>
-            </Col>
-            <Col>
-                <li className="nz-margin-left-md nz-font-md">Javascript <StarRating rate={5} /></li>
-                <li className="nz-margin-left-md nz-font-md">ReactJs <StarRating rate={4} /></li>
-                <li className="nz-margin-left-md nz-font-md">NodeJs <StarRating rate={3} /></li>
-                <li className="nz-margin-left-md nz-font-md">NextJs <StarRating rate={3} /></li>
-                <li className="nz-margin-left-md nz-font-md">Express <StarRating rate={3} /></li>
-                <li className="nz-margin-left-md nz-font-md">HTML <StarRating rate={3} /></li>
-                <li className="nz-margin-left-md nz-font-md">CSS <StarRating rate={3} /></li>
-                <li className="nz-margin-left-md nz-font-md">Java <StarRating rate={2} /></li>
-            </Col>
-        </Row >
+        <Fragment>
+            <Head>
+                <title>{locale.home.name}</title>
+            </Head>
+            <Row align='middle' gutter={[0, 8]}>
+                <Col xs={24}>
+                    <UserCard />
+                </Col>
+                <Col>
+                    <Paragraph className="nz-font-md nz-font-justify">{locale.home.profile.bio}</Paragraph>
+                </Col>
+                <Col xs={24}>
+                    <CustomDivider orientation="left">
+                        <Title className="text nz-margin-none" level={3}>{locale.home.profile.professional.experience.title}</Title>
+                    </CustomDivider>
+                </Col>
+                {locale.home.profile.professional.experience.jobs.map((job, i) => (
+                    <Col xs={24} key={`profile-experience-job-${i}`}>
+                        <Title className="text nz-margin-none" level={4}>
+                            <Link href={job.url} target="_blank">{job.company}</Link>
+                        </Title>
+                        <Text className="nz-font-md">{job.role}</Text>
+                        <Paragraph className="nz-margin-none">{job.activity}</Paragraph>
+                        <Text>{`${job.locale.city}, ${job.locale.state}, ${job.locale.country}`}</Text>
+                    </Col>
+                ))}
+                <Col xs={24}>
+                    <CustomDivider orientation="left">
+                        <Title className="text nz-margin-none" level={3}>{locale.home.profile.academic.title}</Title>
+                    </CustomDivider>
+                </Col>
+                {locale.home.profile.academic.studiedAt.map((studiedAt, i) => (
+                    <Col xs={24} key={`profile-academic-${i}`}>
+                        <Title className="text nz-margin-none" level={4}>
+                            <Link href={studiedAt.url} target="_blank">{studiedAt.name}</Link>
+                        </Title>
+                        <Paragraph className="nz-font-md nz-margin-none">{`${studiedAt.course} ${studiedAt.activity}`}</Paragraph>
+                    </Col>
+                ))}
+                <Col xs={24}>
+                    <CustomDivider orientation="left">
+                        <Title className="text nz-margin-none" level={3}>{locale.home.profile.certifications.title}</Title>
+                    </CustomDivider>
+                </Col>
+                <Col xs={24} md={12} lg={10} xl={7} xxl={4}>
+                    <Timeline mode="left">
+                        {locale.home.profile.certifications.list.map((certificate, i) => (
+                            <Timeline.Item key={`profile-academic-${i}`} label={certificate.company}><a href={certificate.url} target="__blank">{certificate.name}</a></Timeline.Item>
+                        ))}
+                    </Timeline>
+                </Col>                
+                <Col xs={24}>
+                    <CustomDivider orientation="left">
+                        <Title className="text nz-margin-none" level={3}>{locale.home.profile.skills.hardSkills.title}</Title>
+                    </CustomDivider>
+                </Col>
+                <Col xs={24}>
+                    <div className="nz-flex-row" style={{ flexFlow: 'wrap' }}>
+                        {locale.home.profile.skills.hardSkills.list.map((skill, i) => (
+                            <Tag key={`hard-skills-${i}`} borderColor="#FFF" backgroundColor="#FFFFFF29">{skill}</Tag>
+                        ))}
+                    </div>
+                </Col>
+                <Col xs={24}>
+
+                </Col>
+            </Row >
+        </Fragment >
     )
 };
 
-export default App;
+export default Home;
