@@ -1,6 +1,143 @@
 {
-    "userCardProfileTitleDefaultTitle": "Perfil",
-    "userCardProfileTitleMe": "Olá me chamo",
-    "userCardProfileBio": "Sou bacharel em Sistemas de informação na Unijuazeiro. Comecei a desenvolver no ano de 2017 e desde então busquei aprender novas tecnologias para aperfeiçoar meu conhecimento e conseguir produzir código com qualidade cada vez melhor. Estou a procura de um cargo de engenheiro de software junior, e junto da empresa conseguir evoluir para se tornar cada vez melhores.",
-    "userCardProfileErrorOnGetUser": "Falha ao requisitar usuário"
+    "menu": {        
+        "sideMenu": {
+            "contact": {
+                "title": "Contato",
+                "list": [
+                    {
+                        "title": "GitHub",
+                        "fontAwesomeIcon": "FaGithub",
+                        "url": "https://github.com/icaro-davi"
+                    },
+                    {
+                        "title": "LinkedIn",
+                        "fontAwesomeIcon": "FaLinkedin",
+                        "url": "https://www.linkedin.com/in/icaro-davi/"
+                    },
+                    {
+                        "title": "Instagram",
+                        "fontAwesomeIcon": "FaInstagram",
+                        "url": "https://www.instagram.com/icaro_davi_/"
+                    },
+                    {
+                        "title": "FreeCodeCamp",
+                        "fontAwesomeIcon": "FaFreeCodeCamp",
+                        "url": "https://www.freecodecamp.org/icaro-davi"
+                    },
+                    {
+                        "title": "Email",
+                        "fontAwesomeIcon": "FaMailBulk",
+                        "url": "mailto:icarodaviduarte@gmail.com"
+                    },
+                    {
+                        "title": "Curriculo",
+                        "fontAwesomeIcon": "FaFileAlt",
+                        "url": "/curriculum.pdf"
+                    }
+                ]
+            }
+        }
+    },
+    "contact": {
+        "name": "Contato"
+    },
+    "home": {
+        "name": "Perfil",
+        "userCard": {
+            "defaultTitle": "Perfil",
+            "errorOnGetGitHubUser": "Falha ao requisitar usuário"
+        },
+        "profile": {
+            "bio": "Interessado por tecnologias, Geek, estudante autodidata e Desenvolvedor de Software Full-Stack com 3 anos de experiência profissional.",
+            "professional": {
+                "experience": {
+                    "title": "Experiência",
+                    "jobs": [
+                        {
+                            "company": "Handhead",
+                            "url": "https://handhead.com.br",
+                            "role": "Software Developer",
+                            "activity": "julho de 2019 - julho de 2021 (2 anos)",
+                            "locale": {
+                                "city": "Crato",
+                                "state": "Ceará",
+                                "country": "Brasil"
+                            }
+                        }
+                    ]
+                }
+            },
+            "academic": {
+                "title": "Formação acadêmica",
+                "studiedAt": [
+                    {
+                        "name": "Unijuazeiro",
+                        "url": "https://unijuazeiro.edu.br",
+                        "course": "Bacharel em sistemas de informação",
+                        "activity": "(Janeiro 2017 - Dezembro 2020)"
+                    }
+                ]
+            },
+            "certifications": {
+                "title": "Certificados",
+                "list": [
+                    {
+                        "name": "Back-End Development and APIs",
+                        "url": "https://www.freecodecamp.org/certification/icaro-davi/back-end-development-and-apis",
+                        "company": "freeCodeCamp (2021)"
+                    },
+                    {
+                        "name": "Front-End Development Libraries",
+                        "url": "https://www.freecodecamp.org/certification/icaro-davi/front-end-development-libraries",
+                        "company": "freeCodeCamp (2019)"
+                    },                    
+                    {
+                        "name": "JavaScript Algorithms and Data Structures",
+                        "url": "https://www.freecodecamp.org/certification/icaro-davi/javascript-algorithms-and-data-structures",
+                        "company": "freeCodeCamp (2019)"
+                    },                    
+                    {
+                        "name": "Responsive Web Design",
+                        "url": "https://www.freecodecamp.org/certification/icaro-davi/responsive-web-design",
+                        "company": "freeCodeCamp (2018)"
+                    }
+                ]
+            },
+            "skills": {
+                "hardSkills": {
+                    "title": "Hard Skills",
+                    "list": [
+                        "NodeJs",
+                        "Typescript",
+                        "Mongoose",
+                        "Express",
+                        "Java",
+
+                        "HTML",
+                        "CSS",
+                        "LESS",
+                        "SCSS",
+                        "Javascript",
+                        "ReactJs",
+                        "NextJs",
+                        "React Native",
+                        "React Hooks",
+                        "ContextAPI",
+                        "Ant Design",
+
+                        "PostgresSQL",
+                        "MySQL",
+                        "MongoDB",
+                        "GitHub",
+                        "Jira",
+                        "Trello",
+                        "Planning Pocker"
+                    ]
+                }               
+            }
+        }
+    },
+    "portfolio": {
+        "name": "Portfólio"
+    }
 }
