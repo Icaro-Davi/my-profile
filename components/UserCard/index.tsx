@@ -13,7 +13,7 @@ const UserCard: React.FC = props => {
         forceUntilGet: true,
         intervalMs: 30000,
         onError: () => {
-            message.error(locale.userCardProfileErrorOnGetUser, 6);
+            message.error(locale.home.userCard.errorOnGetGitHubUser, 6);
         }
     });
 
@@ -30,14 +30,14 @@ const UserCard: React.FC = props => {
             </Loading>
             <Loading hideBackground hideLoadingIcon isLoading={isLoading}>
                 <div className="nz-padding-left-lg">
-                    <Title className='nz-margin-none text' level={3} title={locale.userCardProfileTitleDefaultTitle}>
+                    <Title className='nz-margin-none text' level={3} title={locale.home.userCard.defaultTitle}>
                         {user?.name.replace(/([\w]*) ([\w]*) .*/g, "$1 $2") || (<>&nbsp;</>)}
                     </Title>
                     <div style={{ minWidth: 50 }}>
                         <CustomDivider className="nz-margin-none" />
                     </div>
-                    <Title className='text' level={4} title={locale.userCardProfileTitleDefaultTitle}>
-                        Full-stack Software Developer Jr
+                    <Title className='text' level={4} title={locale.home.userCard.defaultTitle}>
+                        Full-stack Software Developer
                     </Title>
                 </div>
             </Loading>
