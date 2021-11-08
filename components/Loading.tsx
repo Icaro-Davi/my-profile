@@ -10,16 +10,17 @@ interface LoadingProps {
 }
 
 const Loading: React.FC<LoadingProps> = props => {
+    const Children = React.createElement('div', { children: props.children, style: {} });
     return !props.isLoading ? (
         <React.Fragment>
             {props.children}
         </React.Fragment>
     ) : (
         <div style={{ position: 'relative', ...props.size ? {width: props.size, height: props.size } : {} }}>
-            {React.Children.map(props.children, child =>
+            {React.Children.map(Children, child =>
                 (React.isValidElement(child)) ? React.cloneElement(child, {
                     ...child.props,
-                    style: { ...child.props?.style, filter: 'blur(5px)' },
+                    style: { filter: 'blur(5px)' },
                 }) : null)}
             <div
                 className="nz-flex-row x-center y-center"
