@@ -1,15 +1,12 @@
-import defaultLocale from '../locale/pt-BR.json'
+import defaultLocale from '../locale/pt-BR.json';
 
-export interface Locale {
-    userCardProfileTitleDefaultTitle: string;
-    userCardProfileTitleMe: string;
-    userCardProfileBio: string;
-    userCardProfileErrorOnGetUser: string;
-}
+type L = typeof defaultLocale;
+
+export interface Locale extends L {}
 
 const getLocale = async (language) => {
     try {
-        const locale = (await import(`../locale/${language}`)).default as Locale;
+        const locale = (await import(`../locale/${language}`)).default as Locale;        
         return locale;
     } catch (error) {
         return defaultLocale as Locale;
