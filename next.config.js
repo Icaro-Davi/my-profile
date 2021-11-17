@@ -1,5 +1,5 @@
 const withPlugins = require('next-compose-plugins');
-const withLess = require('@zeit/next-less');
+const withLess = require("next-with-less");
 const lessToJs = require('less-vars-to-js');
 const fs = require('fs');
 const path = require('path');
@@ -27,32 +27,10 @@ plugins.push([
     {
         lessLoaderOptions: {
             javascriptEnabled: true,
-            modifyVars: {...themeVariables, ...colors}
-        },
-        webpack: (config, { isServer }) => {
-            if (isServer) {
-                const antStyles = /antd\/.*?\/style.*?/;
-                const origExternals = [...config.externals];
-                config.externals = [
-                    (context, request, callback) => {
-                        if (request.match(antStyles)) return callback()
-                        if (typeof origExternals[0] === 'function') {
-                            origExternals[0](context, request, callback)
-                        } else {
-                            callback()
-                        }
-                    },
-                    ...(typeof origExternals[0] === 'function' ? [] : origExternals),
-                ];
-
-                config.module.rules.unshift({
-                    test: antStyles,
-                    use: 'null-loader',
-                });
+            lessOptions: {
+                modifyVars: { ...themeVariables, ...colors }
             }
-
-            return config;
-        }
+        },
     }
 ]);
 

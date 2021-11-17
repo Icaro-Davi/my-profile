@@ -1,8 +1,6 @@
 /// <reference types="next" />
 /// <reference types="next/types/global" />
+/// <reference types="next/image-types/global" />
 
-declare module '*.less' {
-  const classes: { readonly [key: string]: string }
-  export default classes
-}
-
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.
