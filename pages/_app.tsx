@@ -1,12 +1,13 @@
+import 'antd/dist/antd.less';
 import '../assets/styles/Global.less';
 import React from 'react';
 import { AppContext, AppProps } from 'next/app';
 
+import rootsConfig from '../components/layout/rootsConfig.json';
 import { LayoutProvider } from '../context/layout';
 import { LayoutInitialProps } from '../context/layout/interface.context';
 import { getAppThemeType } from '../utils/Cookies';
 import { detectDeviceType } from '../utils/detectDeviceType';
-import rootsConfig from '../assets/rootsConfig.json';
 import handleLocale from '../utils/handleLocale';
 
 interface InitialAppProps extends AppProps {

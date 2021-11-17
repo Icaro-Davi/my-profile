@@ -1,7 +1,6 @@
 import { Typography } from 'antd';
 import { AppThemeTypes } from '../../../context/layout/interface.context';
 import Loading from '../../Loading';
-import './CardStyle.less';
 
 const { Title, Paragraph, } = Typography;
 

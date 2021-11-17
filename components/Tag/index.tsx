@@ -1,5 +1,3 @@
-import './tagStyle.less';
-
 interface TagProps {
     textColor?: string;
     borderColor?: string;
