@@ -1,4 +1,3 @@
-import '../../assets/styles/layout/HorizontalMenu.less';
 import { useRef } from 'react';
 import Link from 'next/link';
 import * as Icon from 'react-icons/fa';
@@ -12,7 +11,7 @@ interface HorizontalMenuProps {
 }
 
 export type horizontalMenuItems = {
-    label: string;
+    label?: string;
     key: string;
     href: string;
     icon?: string;
@@ -29,7 +28,7 @@ export type horizontalMenuItems = {
 }[];
 
 const HorizontalMenu: React.FC<HorizontalMenuProps> = props => {
-    const { theme, device } = useLayout();
+    const { theme, device, locale } = useLayout();
     const breakpoints = Grid.useBreakpoint();
     const horizontalMenuLineRef = useRef<HTMLDivElement>(null);
     function handleMenuLine(e: HTMLAnchorElement) {
@@ -38,6 +37,11 @@ const HorizontalMenu: React.FC<HorizontalMenuProps> = props => {
             horizontalMenuLineRef.current.style.width = `${e.offsetWidth}px`;
         }
     }
+
+    const handleLocale = (menuItems: horizontalMenuItems) => menuItems.map(item => ({
+        ...item,
+        label: locale.menu.horizontalMenu.find(menuLocale => menuLocale.key === item.key).name
+    }));
 
     const MenuItems = (items: horizontalMenuItems, activeKey: string, onlyIcons?: boolean) => {
         return items.map(item => {
@@ -60,7 +64,7 @@ const HorizontalMenu: React.FC<HorizontalMenuProps> = props => {
 
     return (
         <div className="horizontal-menu-container nz-padding-left-lg">
-            {MenuItems(props.menuItems, props.initialSelectedItemKey, true)}
+            {MenuItems(handleLocale(props.menuItems), props.initialSelectedItemKey, true)}
             <div ref={horizontalMenuLineRef} className={`horizontal-menu ${theme.name}-line`} />
         </div>
     )
