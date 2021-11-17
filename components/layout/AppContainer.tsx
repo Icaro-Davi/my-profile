@@ -1,4 +1,3 @@
-import '../../assets/styles/layout/AppContainer.less';
 import { useEffect } from 'react';
 import { Content, Header } from 'antd/lib/layout/layout';
 import { Grid } from 'antd';
@@ -8,7 +7,7 @@ import Logo from '../Logo';
 import HorizontalMenu from './HorizontalMenu';
 import { useLayout } from '../../context/layout';
 import SideMenu from './SideMenu';
-import rootsConfig from '../../assets/rootsConfig.json';
+import rootsConfig from './rootsConfig.json';
 
 const AppContainer: React.FC = props => {
     const breakpoints = Grid.useBreakpoint();
@@ -33,7 +32,7 @@ const AppContainer: React.FC = props => {
     return (
         <div className={`nz-flex-column nz-custom-scrollbar ${theme.name}-scrollbar nz-app-transition nz-${theme.name}-color-text nz-${theme.name}-color-title`} style={{ flex: 1 }}>
             {visibility.menu.top && (
-                <Header className={`nz-flex-row nz-z-index-10 nz-top-menu nz-${theme.name}-background-1 nz-app-transition`}>
+                <Header className={`nz-flex-row nz-z-index-10 nz-top-menu nz-${theme.name}-background-1 nz-app-transition nz-padding-none`}>
                     <Logo theme={theme.name} onClick={handleLogoClick} />
                     <HorizontalMenu {...{ menuItems: rootsConfig, initialSelectedItemKey: router.pathname }} />
                 </Header>
