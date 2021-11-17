@@ -1,6 +1,5 @@
 [
     {
-        "label": "Home",
         "icon": "FaHome",
         "key": "/",
         "href": "/",
@@ -11,7 +10,6 @@
         }
     },
     {
-        "label": "Contato",
         "key": "/contact",
         "href": "/contact",
         "menuProperties": {
@@ -29,7 +27,6 @@
         }
     },
     {
-        "label": "Portfólio",
         "key": "/portfolio",
         "href": "/portfolio",
         "menuProperties": {

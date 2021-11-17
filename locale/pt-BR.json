@@ -1,5 +1,19 @@
 {
-    "menu": {        
+    "menu": {
+        "horizontalMenu": [
+            {
+                "key": "/",
+                "name": "Perfil"
+            },
+            {
+                "key": "/contact",
+                "name": "Contato"
+            },
+            {
+                "key": "/portfolio",
+                "name": "Portfólio"
+            }
+        ],
         "sideMenu": {
             "contact": {
                 "title": "Contato",
@@ -38,106 +52,133 @@
             }
         }
     },
-    "contact": {
-        "name": "Contato"
-    },
-    "home": {
-        "name": "Perfil",
-        "userCard": {
-            "defaultTitle": "Perfil",
-            "errorOnGetGitHubUser": "Falha ao requisitar usuário"
+    "page": {
+        "contact": {
+            "name": "Contato"
         },
-        "profile": {
-            "bio": "Interessado por tecnologias, Geek, estudante autodidata e Desenvolvedor de Software Full-Stack com 3 anos de experiência profissional.",
-            "professional": {
-                "experience": {
-                    "title": "Experiência",
-                    "jobs": [
-                        {
-                            "company": "Handhead",
-                            "url": "https://handhead.com.br",
-                            "role": "Software Developer",
-                            "activity": "julho de 2019 - julho de 2021 (2 anos)",
-                            "locale": {
-                                "city": "Crato",
-                                "state": "Ceará",
-                                "country": "Brasil"
+        "home": {
+            "name": "Perfil",
+            "userCard": {
+                "defaultTitle": "Perfil"
+            },
+            "profile": {
+                "bio": "Interessado por tecnologias, Geek, estudante autodidata e Desenvolvedor de Software Full-Stack com 3 anos de experiência profissional.",
+                "professional": {
+                    "experience": {
+                        "title": "Experiência",
+                        "jobs": [
+                            {
+                                "company": "Handhead",
+                                "url": "https://handhead.com.br",
+                                "role": "Software Developer",
+                                "activity": "julho de 2019 - julho de 2021 (2 anos)",
+                                "locale": {
+                                    "city": "Crato",
+                                    "state": "Ceará",
+                                    "country": "Brasil"
+                                }
                             }
+                        ]
+                    }
+                },
+                "academic": {
+                    "title": "Formação acadêmica",
+                    "studiedAt": [
+                        {
+                            "name": "Unijuazeiro",
+                            "url": "https://unijuazeiro.edu.br",
+                            "course": "Bacharel em sistemas de informação",
+                            "activity": "(Janeiro 2017 - Dezembro 2020)"
+                        }
+                    ]
+                },
+                "certifications": {
+                    "title": "Certificados",
+                    "list": [
+                        {
+                            "name": "Back-End Development and APIs",
+                            "url": "https://www.freecodecamp.org/certification/icaro-davi/back-end-development-and-apis",
+                            "company": "freeCodeCamp (2021)"
+                        },
+                        {
+                            "name": "Front-End Development Libraries",
+                            "url": "https://www.freecodecamp.org/certification/icaro-davi/front-end-development-libraries",
+                            "company": "freeCodeCamp (2019)"
+                        },
+                        {
+                            "name": "JavaScript Algorithms and Data Structures",
+                            "url": "https://www.freecodecamp.org/certification/icaro-davi/javascript-algorithms-and-data-structures",
+                            "company": "freeCodeCamp (2019)"
+                        },
+                        {
+                            "name": "Responsive Web Design",
+                            "url": "https://www.freecodecamp.org/certification/icaro-davi/responsive-web-design",
+                            "company": "freeCodeCamp (2018)"
+                        }
+                    ]
+                },
+                "skills": {
+                    "hardSkills": {
+                        "title": "Hard Skills",
+                        "list": [
+                            "NodeJs",
+                            "Typescript",
+                            "Mongoose",
+                            "Express",
+                            "Java",
+                            "HTML",
+                            "CSS",
+                            "LESS",
+                            "SCSS",
+                            "Javascript",
+                            "ReactJs",
+                            "NextJs",
+                            "React Native",
+                            "React Hooks",
+                            "ContextAPI",
+                            "Ant Design",
+                            "PostgresSQL",
+                            "MySQL",
+                            "MongoDB",
+                            "GitHub",
+                            "Jira",
+                            "Trello",
+                            "Planning Pocker"
+                        ]
+                    }
+                }
+            }
+        },
+        "portfolio": {
+            "name": "Portfólio",
+            "section": {
+                "portfolioCards": {
+                    "title": "Projetos que já participei",
+                    "list": [
+                        {
+                            "title": "Mìticard (2020)",
+                            "href": "https://miticard.com.br",
+                            "pictureSrc": "/portfolio/miticard.jpg",
+                            "description": "https://miticard.com.br"
+                        },
+                        {
+                            "title": "Mostruário (2020)",
+                            "href": "https://site.mostruar.io",
+                            "pictureSrc": "/portfolio/mostruario.jpg",
+                            "description": "Cadastre sua loja e venda online seus produtos."
+                        },
+                        {
+                            "title": "Mallbuyle (2021)",
+                            "href": "https://play.google.com/store/apps/details?id=br.com.mallbuyle",
+                            "pictureSrc": "/portfolio/mallbuyle.jpg",
+                            "description": "App de vendas de produtos por região."
                         }
                     ]
                 }
-            },
-            "academic": {
-                "title": "Formação acadêmica",
-                "studiedAt": [
-                    {
-                        "name": "Unijuazeiro",
-                        "url": "https://unijuazeiro.edu.br",
-                        "course": "Bacharel em sistemas de informação",
-                        "activity": "(Janeiro 2017 - Dezembro 2020)"
-                    }
-                ]
-            },
-            "certifications": {
-                "title": "Certificados",
-                "list": [
-                    {
-                        "name": "Back-End Development and APIs",
-                        "url": "https://www.freecodecamp.org/certification/icaro-davi/back-end-development-and-apis",
-                        "company": "freeCodeCamp (2021)"
-                    },
-                    {
-                        "name": "Front-End Development Libraries",
-                        "url": "https://www.freecodecamp.org/certification/icaro-davi/front-end-development-libraries",
-                        "company": "freeCodeCamp (2019)"
-                    },                    
-                    {
-                        "name": "JavaScript Algorithms and Data Structures",
-                        "url": "https://www.freecodecamp.org/certification/icaro-davi/javascript-algorithms-and-data-structures",
-                        "company": "freeCodeCamp (2019)"
-                    },                    
-                    {
-                        "name": "Responsive Web Design",
-                        "url": "https://www.freecodecamp.org/certification/icaro-davi/responsive-web-design",
-                        "company": "freeCodeCamp (2018)"
-                    }
-                ]
-            },
-            "skills": {
-                "hardSkills": {
-                    "title": "Hard Skills",
-                    "list": [
-                        "NodeJs",
-                        "Typescript",
-                        "Mongoose",
-                        "Express",
-                        "Java",
-
-                        "HTML",
-                        "CSS",
-                        "LESS",
-                        "SCSS",
-                        "Javascript",
-                        "ReactJs",
-                        "NextJs",
-                        "React Native",
-                        "React Hooks",
-                        "ContextAPI",
-                        "Ant Design",
-
-                        "PostgresSQL",
-                        "MySQL",
-                        "MongoDB",
-                        "GitHub",
-                        "Jira",
-                        "Trello",
-                        "Planning Pocker"
-                    ]
-                }               
             }
         }
     },
-    "portfolio": {
-        "name": "Portfólio"
+    "error": {
+        "failedRequestUser": "Falha ao requisitar usuário"
     }
 }
