@@ -1,6 +1,184 @@
 {
-    "userCardProfileTitleDefaultTitle": "Profile",
-    "userCardProfileTitleMe": "Hello my name is",
-    "userCardProfileBio": "I have a bachelor's degree in Information Systems at Unijuazeiro. I started developing in 2017 and since then I've been looking to learn new technologies to improve my knowledge and be able to produce code with better quality. I'm looking for a position as a junior software engineer, and with the company to be able to evolve to become even better.",
-    "userCardProfileErrorOnGetUser": "Failed to request user"
+    "menu": {
+        "horizontalMenu": [
+            {
+                "key": "/",
+                "name": "Profile"
+            },
+            {
+                "key": "/contact",
+                "name": "Contact"
+            },
+            {
+                "key": "/portfolio",
+                "name": "Portfolio"
+            }
+        ],
+        "sideMenu": {
+            "contact": {
+                "title": "Contact",
+                "list": [
+                    {
+                        "title": "GitHub",
+                        "fontAwesomeIcon": "FaGithub",
+                        "url": "https://github.com/icaro-davi"
+                    },
+                    {
+                        "title": "LinkedIn",
+                        "fontAwesomeIcon": "FaLinkedin",
+                        "url": "https://www.linkedin.com/in/icaro-davi/"
+                    },
+                    {
+                        "title": "Instagram",
+                        "fontAwesomeIcon": "FaInstagram",
+                        "url": "https://www.instagram.com/icaro_davi_/"
+                    },
+                    {
+                        "title": "FreeCodeCamp",
+                        "fontAwesomeIcon": "FaFreeCodeCamp",
+                        "url": "https://www.freecodecamp.org/icaro-davi"
+                    },
+                    {
+                        "title": "Email",
+                        "fontAwesomeIcon": "FaMailBulk",
+                        "url": "mailto:icarodaviduarte@gmail.com"
+                    },
+                    {
+                        "title": "Curriculum",
+                        "fontAwesomeIcon": "FaFileAlt",
+                        "url": "/curriculum.pdf"
+                    }
+                ]
+            }
+        }
+    },
+    "page": {
+        "contact": {
+            "name": "Contact"
+        },
+        "home": {
+            "name": "Profile",
+            "userCard": {
+                "defaultTitle": "Profile"
+            },
+            "profile": {
+                "bio": "Interested in technologies, Geek, self-taught student and Full-Stack Software Developer with 3 years of professional experience.",
+                "professional": {
+                    "experience": {
+                        "title": "Experience",
+                        "jobs": [
+                            {
+                                "company": "Handhead",
+                                "url": "https://handhead.com.br",
+                                "role": "Software Developer",
+                                "activity": "july 2019 - july 2021 (2 years)",
+                                "locale": {
+                                    "city": "Crato",
+                                    "state": "Ceará",
+                                    "country": "Brazil"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "academic": {
+                    "title": "Academic Education",
+                    "studiedAt": [
+                        {
+                            "name": "Unijuazeiro",
+                            "url": "https://unijuazeiro.edu.br",
+                            "course": "Bachelor in Information Systems",
+                            "activity": "(January 2017 - December 2020)"
+                        }
+                    ]
+                },
+                "certifications": {
+                    "title": "Certificates",
+                    "list": [
+                        {
+                            "name": "Back-End Development and APIs",
+                            "url": "https://www.freecodecamp.org/certification/icaro-davi/back-end-development-and-apis",
+                            "company": "freeCodeCamp (2021)"
+                        },
+                        {
+                            "name": "Front-End Development Libraries",
+                            "url": "https://www.freecodecamp.org/certification/icaro-davi/front-end-development-libraries",
+                            "company": "freeCodeCamp (2019)"
+                        },
+                        {
+                            "name": "JavaScript Algorithms and Data Structures",
+                            "url": "https://www.freecodecamp.org/certification/icaro-davi/javascript-algorithms-and-data-structures",
+                            "company": "freeCodeCamp (2019)"
+                        },
+                        {
+                            "name": "Responsive Web Design",
+                            "url": "https://www.freecodecamp.org/certification/icaro-davi/responsive-web-design",
+                            "company": "freeCodeCamp (2018)"
+                        }
+                    ]
+                },
+                "skills": {
+                    "hardSkills": {
+                        "title": "Hard Skills",
+                        "list": [
+                            "NodeJs",
+                            "Typescript",
+                            "Mongoose",
+                            "Express",
+                            "Java",
+                            "HTML",
+                            "CSS",
+                            "LESS",
+                            "SCSS",
+                            "Javascript",
+                            "ReactJs",
+                            "NextJs",
+                            "React Native",
+                            "React Hooks",
+                            "ContextAPI",
+                            "Ant Design",
+                            "PostgresSQL",
+                            "MySQL",
+                            "MongoDB",
+                            "GitHub",
+                            "Jira",
+                            "Trello",
+                            "Planning Pocker"
+                        ]
+                    }
+                }
+            }
+        },
+        "portfolio": {
+            "name": "Portfolio",
+            "section": {
+                "portfolioCards": {
+                    "title": "Projects I've participated in",
+                    "list": [
+                        {
+                            "title": "Mìticard (2020)",
+                            "href": "https://miticard.com.br",
+                            "pictureSrc": "/portfolio/miticard.jpg",
+                            "description": "A Health Club that provides the most practical and accessible way for you and your entire family to take care of your health with quality."
+                        },
+                        {
+                            "title": "Mostruário (2020)",
+                            "href": "https://site.mostruar.io",
+                            "pictureSrc": "/portfolio/mostruario.jpg",
+                            "description": "Register your store and sell your products online."
+                        },
+                        {
+                            "title": "Mallbuyle (2021)",
+                            "href": "https://play.google.com/store/apps/details?id=br.com.mallbuyle",
+                            "pictureSrc": "/portfolio/mallbuyle.jpg",
+                            "description": "Product sales app by region."
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "error": {
+        "failedRequestUser": "Failed to request user"
+    }
 }
