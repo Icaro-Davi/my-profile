@@ -1,5 +1,4 @@
 import { Progress, Row, Col } from 'antd';
-import colors from '../assets/colors/colors.json';
 
 interface HardSkillsProps {
     userSkills: {
